@@ -32,7 +32,7 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
      * Creates a client-side handler.
      */
     public EchoClientHandler() {
-        req = ("lirenzuo" + System.getProperty("line.separator")).getBytes();
+        req = ("零度你好，关注了你的公众号：【匠心零度】。" + System.getProperty("line.separator")).getBytes();
     }
 
     @Override

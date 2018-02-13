@@ -31,7 +31,7 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
         String body = (String) msg;
         System.out.println(body);
-        String req = "lirenzuo" + System.getProperty("line.separator");
+        String req = "感谢关注，希望在这里找到你想要的。" + System.getProperty("line.separator");
         ByteBuf resp = Unpooled.copiedBuffer(req.getBytes());
         ctx.writeAndFlush(resp);
     }
