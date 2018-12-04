@@ -23,7 +23,7 @@ public class ChannelOutboundHandlerAdapter3 extends ChannelOutboundHandlerAdapte
     @Override
     public void handlerAdded(final ChannelHandlerContext ctx) throws Exception {
 
-        ctx.executor().schedule(new Runnable() {
+       /* ctx.executor().schedule(new Runnable() {
             public void run() {
                 ctx.channel().writeAndFlush("hello").addListener(new ChannelFutureListener() {
                     public void operationComplete(ChannelFuture future) throws Exception {
@@ -34,7 +34,7 @@ public class ChannelOutboundHandlerAdapter3 extends ChannelOutboundHandlerAdapte
                     }
                 });
             }
-        }, 3, TimeUnit.SECONDS);
+        }, 3, TimeUnit.SECONDS);*/
 
         super.handlerAdded(ctx);
     }
