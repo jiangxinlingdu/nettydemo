@@ -13,12 +13,12 @@ public class ChannelInboundHandlerAdapter3 extends ChannelInboundHandlerAdapter 
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        try {
+       /* try {
             System.out.println(1/0);
         } catch (Exception e) {
             e.printStackTrace();
             ctx.pipeline().fireExceptionCaught(e);
-        }
+        }*/
         // ctx.pipeline().fireChannelRead("a");
 
     }

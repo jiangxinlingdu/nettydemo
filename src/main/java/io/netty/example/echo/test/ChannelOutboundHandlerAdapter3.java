@@ -1,8 +1,6 @@
 package io.netty.example.echo.test;
 
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelOutboundHandlerAdapter;
-import io.netty.channel.ChannelPromise;
+import io.netty.channel.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -27,9 +25,16 @@ public class ChannelOutboundHandlerAdapter3 extends ChannelOutboundHandlerAdapte
 
         ctx.executor().schedule(new Runnable() {
             public void run() {
-                ctx.channel().write("hello");
+                ctx.channel().writeAndFlush("hello").addListener(new ChannelFutureListener() {
+                    public void operationComplete(ChannelFuture future) throws Exception {
+                        System.out.println("======");
+                        if (!future.isSuccess()) {
+                            System.out.println("======isSuccess");
+                        }
+                    }
+                });
             }
-        },3,TimeUnit.SECONDS);
+        }, 3, TimeUnit.SECONDS);
 
         super.handlerAdded(ctx);
     }
