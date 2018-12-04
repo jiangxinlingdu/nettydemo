@@ -32,6 +32,7 @@ public class ServerT2 {
                             pipeline.addLast(new StringDecoder());
                             pipeline.addLast(new StringEncoder());
                             pipeline.addLast(new ChannelInboundHandlerAdapter5());
+                            //pipeline.addLast(new ChannelInboundHandlerAdapter6());
                         }
                     });
 
