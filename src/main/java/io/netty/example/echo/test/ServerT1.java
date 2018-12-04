@@ -21,7 +21,7 @@ public class ServerT1 {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.channel(NioServerSocketChannel.class)
                     .group(boss,woker)
-                    .childOption(ChannelOption.SO_BACKLOG,1024)
+                    .option(ChannelOption.SO_BACKLOG,1024)
                     .childOption(ChannelOption.SO_RCVBUF,5*1024)
                     .childOption(ChannelOption.SO_SNDBUF,5*1024)
                   //  .handler(new BizHander())

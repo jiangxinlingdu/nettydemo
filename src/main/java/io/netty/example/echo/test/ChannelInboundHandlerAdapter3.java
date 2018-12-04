@@ -11,14 +11,19 @@ public class ChannelInboundHandlerAdapter3 extends ChannelInboundHandlerAdapter 
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         System.out.println("ChannelInboundHandlerAdapter3");
 
-        ctx.channel().writeAndFlush("hello").addListener(new ChannelFutureListener() {
+        ChannelFuture future = ctx.channel().writeAndFlush("hello");
+
+        future.addListener(new ChannelFutureListener() {
             public void operationComplete(ChannelFuture future) throws Exception {
                 System.out.println("======");
                 if (future.isSuccess()) {
                     System.out.println("======isSuccess");
                 }
+                Thread.sleep(5000);
             }
         });
+
+        System.out.println("进行执行，不阻塞");
 
         super.channelRead(ctx, msg);
     }
