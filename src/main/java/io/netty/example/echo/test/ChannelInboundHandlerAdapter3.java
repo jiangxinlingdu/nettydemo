@@ -23,7 +23,7 @@ public class ChannelInboundHandlerAdapter3 extends ChannelInboundHandlerAdapter 
             }
         });
 
-        System.out.println("进行执行，不阻塞");
+        System.out.println("继续执行，不阻塞");
 
         super.channelRead(ctx, msg);
     }
