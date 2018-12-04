@@ -15,7 +15,7 @@ public class ChannelInboundHandlerAdapter5 extends ChannelInboundHandlerAdapter 
         ChannelFuture future = ctx.channel().writeAndFlush("hello");
         future.addListener(new ChannelFutureListener() {
             public void operationComplete(ChannelFuture future) throws Exception {
-                System.out.println("======");
+                System.out.println("isDone======");
                 if (future.isSuccess()) {
                     Thread.sleep(5000);
                     System.out.println("======isSuccess");
