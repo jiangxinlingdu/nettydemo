@@ -17,9 +17,9 @@ public class ChannelInboundHandlerAdapter3 extends ChannelInboundHandlerAdapter 
             public void operationComplete(ChannelFuture future) throws Exception {
                 System.out.println("======");
                 if (future.isSuccess()) {
+                    Thread.sleep(5000);
                     System.out.println("======isSuccess");
                 }
-                Thread.sleep(5000);
             }
         });
 
