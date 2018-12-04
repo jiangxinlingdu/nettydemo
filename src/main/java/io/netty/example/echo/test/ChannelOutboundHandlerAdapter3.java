@@ -28,7 +28,7 @@ public class ChannelOutboundHandlerAdapter3 extends ChannelOutboundHandlerAdapte
                 ctx.channel().writeAndFlush("hello").addListener(new ChannelFutureListener() {
                     public void operationComplete(ChannelFuture future) throws Exception {
                         System.out.println("======");
-                        if (!future.isSuccess()) {
+                        if (future.isSuccess()) {
                             System.out.println("======isSuccess");
                         }
                     }
