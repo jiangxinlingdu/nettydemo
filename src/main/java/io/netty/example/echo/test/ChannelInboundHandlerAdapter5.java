@@ -10,7 +10,7 @@ public class ChannelInboundHandlerAdapter5 extends ChannelInboundHandlerAdapter 
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         System.out.println("ChannelInboundHandlerAdapter5");
 
-        //这段代码 怎么执行都是顺序执行，不阻塞 最后，ractor线程里面都是同步的
+        //这段代码 怎么执行都是顺序执行，不阻塞 最后，reactor线程里面都是同步的
         ChannelFuture future = ctx.channel().writeAndFlush("hello");
         future.addListener(new ChannelFutureListener() {
             public void operationComplete(ChannelFuture future) throws Exception {

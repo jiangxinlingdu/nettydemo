@@ -31,8 +31,8 @@ public class ServerT2 {
                             ChannelPipeline pipeline = ch.pipeline();
                             pipeline.addLast(new StringDecoder());
                             pipeline.addLast(new StringEncoder());
-                            pipeline.addLast(new ChannelInboundHandlerAdapter5());
-                            //pipeline.addLast(new ChannelInboundHandlerAdapter6());
+                            //pipeline.addLast(new ChannelInboundHandlerAdapter5());
+                            pipeline.addLast(new ChannelInboundHandlerAdapter6());
                         }
                     });
 
