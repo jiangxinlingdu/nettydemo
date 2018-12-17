@@ -9,7 +9,7 @@ public class FastThreadLocalTest {
 
     public static void main(String[] args) {
 
-        //if (thread instanceof FastThreadLocalThread) 所有 这里是FastThreadLocalThread而不是普通线程
+        //if (thread instanceof FastThreadLocalThread) 所以 这里是FastThreadLocalThread而不是普通线程
         new FastThreadLocalThread(new Runnable() {
             public void run() {
                 for (int i = 0; i < 100; i++) {
