@@ -5,7 +5,7 @@ import io.netty.util.concurrent.FastThreadLocal;
 import io.netty.util.concurrent.FastThreadLocalThread;
 
 public class FastThreadLocalTest {
-    private static FastThreadLocal<Object> fastThreadLocal = new FastThreadLocal<Object>();
+    private static FastThreadLocal<Integer> fastThreadLocal = new FastThreadLocal<Integer>();
 
     public static void main(String[] args) {
 
