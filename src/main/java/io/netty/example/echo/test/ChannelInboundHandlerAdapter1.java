@@ -12,6 +12,11 @@ public class ChannelInboundHandlerAdapter1 extends ChannelInboundHandlerAdapter 
     }
 
     @Override
+    public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
+        super.channelReadComplete(ctx);
+    }
+
+    @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         System.out.println("ChannelInboundHandlerAdapter1  exceptionCaught");
         super.exceptionCaught(ctx, cause);
