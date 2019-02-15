@@ -2,6 +2,7 @@ package io.netty.example.echo.test;
 
 
 import io.netty.util.Recycler;
+import io.netty.util.concurrent.FastThreadLocalThread;
 
 public class RecyclerTest {
 
@@ -24,7 +25,7 @@ public class RecyclerTest {
         user.recycle();
 
 
-        new Thread(() -> {
+        new FastThreadLocalThread(() -> {
 
             User user2 = recycler.get();
             System.out.println(user2.getName());
