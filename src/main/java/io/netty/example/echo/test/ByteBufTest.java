@@ -3,6 +3,8 @@ package io.netty.example.echo.test;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
 import io.netty.buffer.PooledByteBufAllocator;
+import io.netty.buffer.Unpooled;
+import io.netty.buffer.UnpooledDirectByteBuf;
 
 public class ByteBufTest {
     public static void main(String[] args) {
@@ -12,5 +14,10 @@ public class ByteBufTest {
 
         //很重要，内存释放
         byteBuf.release();
+
+
+
+        ByteBuf byteBuf1 = Unpooled.buffer(10);
+        byteBuf1.release();
     }
 }
