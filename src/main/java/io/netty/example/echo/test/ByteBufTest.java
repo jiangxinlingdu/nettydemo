@@ -15,5 +15,9 @@ public class ByteBufTest {
 
         ByteBuf byteBuf1 = Unpooled.buffer(10);
         byteBuf1.release();
+
+        ByteBuf byteBuf2 = Unpooled.directBuffer(20);
+        byteBuf2.release();
+
     }
 }
