@@ -41,6 +41,11 @@ public class ChannelInboundHandlerAdapter3 extends ChannelInboundHandlerAdapter 
     }
 
     @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        super.channelInactive(ctx);
+    }
+
+    @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         System.out.println("ChannelInboundHandlerAdapter3  exceptionCaught");
         //如果这么写不就是死循环了嘛 ，传递到下面去了之后又传递过来又执行，反复执行了
