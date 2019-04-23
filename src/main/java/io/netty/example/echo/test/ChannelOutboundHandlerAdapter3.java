@@ -1,8 +1,8 @@
 package io.netty.example.echo.test;
 
-import io.netty.channel.*;
-
-import java.util.concurrent.TimeUnit;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelOutboundHandlerAdapter;
+import io.netty.channel.ChannelPromise;
 
 
 public class ChannelOutboundHandlerAdapter3 extends ChannelOutboundHandlerAdapter {
