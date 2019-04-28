@@ -10,8 +10,22 @@ public class ByteBufTest {
         ByteBufAllocator alloc = PooledByteBufAllocator.DEFAULT;
         ByteBuf byteBuf = alloc.directBuffer(8 * 1024);
 
+        byteBuf.writeInt(126);
+        System.out.println(byteBuf.readInt());
         //很重要，内存释放
         byteBuf.release();
+
+        byteBuf = alloc.directBuffer(2 * 1024);
+
+        byteBuf.writeInt(127);
+        System.out.println(byteBuf.readInt());
+        //很重要，内存释放
+
+        byteBuf = alloc.directBuffer(256);
+        byteBuf.writeInt(128);
+        System.out.println(byteBuf.readInt());
+        //很重要，内存释放
+
 
         ByteBuf byteBuf1 = Unpooled.buffer(10);
         byteBuf1.release();
