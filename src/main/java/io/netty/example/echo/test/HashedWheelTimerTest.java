@@ -13,6 +13,8 @@ public class HashedWheelTimerTest {
 
     public static void main(String[] argv) {
 
+        // tickDuration和unit 每格的时间间隔
+        //ticksPerWheel 一圈下来有几格 如果传入的不是2的N次方，则会调整为大于等于该参数的第一个2的N次方，好处是可以优化hash值的计算
         final Timer timer = new HashedWheelTimer(Executors.defaultThreadFactory(), 5, TimeUnit.SECONDS, 2);
 
         timer.newTimeout(new TimerTask() {
