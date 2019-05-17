@@ -6,6 +6,7 @@ import io.netty.util.Timeout;
 import io.netty.util.Timer;
 import io.netty.util.TimerTask;
 
+import java.time.LocalDateTime;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
@@ -31,11 +32,11 @@ public class HashedWheelTimerTest {
         timer.newTimeout(new TimerTask() {
             @Override
             public void run(Timeout timeout) throws Exception {
-                System.out.println("task 2 will run per 10 seconds");
+                System.out.println("task 2 will run per 100 seconds="+LocalDateTime.now());
                 //结束时候再注册
-                timer.newTimeout(this, 10, TimeUnit.SECONDS);
+                timer.newTimeout(this, 100, TimeUnit.SECONDS);
             }
-        }, 10, TimeUnit.SECONDS);
+        }, 100, TimeUnit.SECONDS);
 
 
         //该任务仅仅运行一次
