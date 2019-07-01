@@ -65,8 +65,21 @@ public class FastThreadLocalTest {
             }
         }, "fastThreadLocal2").start();
 
-        //为了查看引用怎么运行的 Reference Handler，如果pending有值，就会调用enqueue存入queue
-        // 这里有个例外，堆外内存申请时的Cleaner对象，只会执行它的clean方法，并不会放到queue中。
+
+        /**
+         * // Fast path for cleaners
+         *         if (c != null) {
+         *             c.clean();
+         *             return true;
+         *         }
+         *
+         *         ReferenceQueue<? super Object> q = r.queue;
+         *         if (q != ReferenceQueue.NULL) q.enqueue(r);
+         *         return true;
+         */
+        //为了查看引用怎么运行的 Reference Handler，如果pending有值
+        // 情况1：如果是堆外内存申请时的Cleaner对象，只会执行它的clean方法，并不会放到queue中，之后return了。
+        //情况2：ReferenceQueue不是默认，就是设置过的，就会调用enqueue存入queue
         System.gc();
         System.in.read();
     }
