@@ -4,6 +4,8 @@ package io.netty.example.echo.test;
 import io.netty.util.concurrent.FastThreadLocal;
 import io.netty.util.concurrent.FastThreadLocalThread;
 
+import java.io.IOException;
+
 public class FastThreadLocalTest {
     private static FastThreadLocal<Integer> fastThreadLocal = new FastThreadLocal<Integer>();
     private static FastThreadLocal<Integer> fastThreadLocal1 = new FastThreadLocal<Integer>();
@@ -30,7 +32,7 @@ public class FastThreadLocalTest {
     private static FastThreadLocal<Integer> fastThreadLocal79 = new FastThreadLocal<Integer>();
     private static FastThreadLocal<Integer> fastThreadLocal99 = new FastThreadLocal<Integer>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         //if (thread instanceof FastThreadLocalThread) 所以 这里是FastThreadLocalThread而不是普通线程
         new FastThreadLocalThread(new Runnable() {
@@ -62,5 +64,10 @@ public class FastThreadLocalTest {
                 }
             }
         }, "fastThreadLocal2").start();
+
+        //为了查看引用怎么运行的 Reference Handler，如果pending有值，就会调用enqueue存入queue
+        // 这里有个例外，堆外内存申请时的Cleaner对象，只会执行它的clean方法，并不会放到queue中。
+        System.gc();
+        System.in.read();
     }
 }
