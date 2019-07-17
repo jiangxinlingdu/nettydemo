@@ -48,7 +48,7 @@ public class ByteBufTest {
         //很重要，内存释放
         byteBuf.release();
 
-        //走缓存
+        //不走缓存
         byteBuf = alloc.directBuffer(64 * 1024);
         byteBuf.writeInt(128);
         System.out.println(byteBuf.readInt());
