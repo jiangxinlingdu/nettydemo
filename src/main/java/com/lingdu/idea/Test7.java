@@ -5,7 +5,7 @@ package com.lingdu.idea;
  */
 public class Test7 {
     public static void main(String[] args) {
-        //便捷的处理json字符串
+        //便捷的json字符串处理
         /**
          {
         "employees": [

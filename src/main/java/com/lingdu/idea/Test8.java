@@ -6,7 +6,7 @@ package com.lingdu.idea;
 public class Test8 {
     public static void main(String[] args) {
 
-        //转化二进制高效运算
+        //转化为高效运算的二进制
 
         int num = 128;
 
