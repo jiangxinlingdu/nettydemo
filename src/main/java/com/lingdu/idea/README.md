@@ -23,6 +23,7 @@ IDEA里有一个万能快捷键，功能非常强大，同一个快捷键，可�
 
 为了能让大家更直观的看到效果，我录制了GIF演示。
 
+[http://www.jiangxinlingdu.com/idea/2019/07/19/idea.html](http://www.jiangxinlingdu.com/idea/2019/07/19/idea.html)
 
 
 总结：万能快捷键很牛掰，在不知道什么操作的时候，试试按一下吧，可能会给你惊喜哦！！！

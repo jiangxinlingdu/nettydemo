@@ -22,8 +22,18 @@ public class ByteBufTest {
 
         byteBuf.writeInt(126);
         System.out.println(byteBuf.readInt());
-        //很重要，内存释放
+
+        // 模拟走另一个分支（继续再chunk上面分配page里面另外的subpage） 所以暂时不释放， 稍后释放，
+        //byteBuf.release();
+
+        ByteBuf byteBuf0 = alloc.directBuffer(256);
+
+        byteBuf0.writeInt(126);
+        System.out.println(byteBuf0.readInt());
+
+        //进行释放
         byteBuf.release();
+        byteBuf0.release();
 
         //small规格内存分配
         byteBuf = alloc.directBuffer(2 * 1024);
