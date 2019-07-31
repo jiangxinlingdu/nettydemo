@@ -1,29 +1,6 @@
-IDEA里有一个万能快捷键，功能非常强大，同一个快捷键，可以根据不同的语境提示你不同的操作，
-很多人可能还不了解这些功能，在处理代码的时候还手动处理，了解这些技巧之后，你编码也是一种享受。
-
-万能快捷键可以帮你做很多事情，我大概总结了17点：
-
-- 转换lambda表达式
-- equals的翻转
-- 自动导包
-- 异常捕获
-- SimpleDateFormat转换为ThreadLocal封装的SimpleDateFormat
-- 注释移动
-- 便捷的json字符串处理
-- 转化为高效运算的二进制
-- if……else变成简单三目运算 以及一些简化操作
-- 引入局部变量
-- 实现接口
-- 实现抽象类
-- 修复方法返回值、增加入参、减少入参、方法生成等
-- 字符串相关操作
-- ， + < 等位置互换
-- java访问修饰符的更改操作
-- 自动生成属性操作
-
-为了能让大家更直观的看到效果，我录制了GIF演示。
-
-[http://www.jiangxinlingdu.com/idea/2019/07/19/idea.html](http://www.jiangxinlingdu.com/idea/2019/07/19/idea.html)
 
 
-总结：万能快捷键很牛掰，在不知道什么操作的时候，试试按一下吧，可能会给你惊喜哦！！！
+[IntelliJ IDEA 2019.2最新解读：性能更好，体验更优，细节处理更完美！](http://www.jiangxinlingdu.com/idea/2019/07/29/idea-201902.html)
+
+[idea万能快捷键(alt enter)，你不知道的17个实用技巧！！！](http://www.jiangxinlingdu.com/idea/2019/07/19/idea.html)
+
