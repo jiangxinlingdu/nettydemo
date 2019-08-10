@@ -9,8 +9,8 @@ public class ByteBufTest {
     public static void main(String[] args) {
         ByteBufAllocator alloc = PooledByteBufAllocator.DEFAULT;
 
-        //tiny规格内存分配
-        ByteBuf byteBuf = alloc.directBuffer(256);
+        //tiny规格内存分配  会变成大于等于16的整数倍的数：这里254 会规格化为256
+        ByteBuf byteBuf = alloc.directBuffer(254);
 
         byteBuf.writeInt(126);
         System.out.println(byteBuf.readInt());
@@ -35,8 +35,8 @@ public class ByteBufTest {
         byteBuf.release();
         byteBuf0.release();
 
-        //small规格内存分配
-        byteBuf = alloc.directBuffer(2 * 1024);
+        //small规格内存分配 会变成大于等于2的幂次方的数：这里2*1023 会规格化为2*1024
+        byteBuf = alloc.directBuffer(2 * 1023);
 
         byteBuf.writeInt(127);
         System.out.println(byteBuf.readInt());
